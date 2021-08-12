@@ -1,8 +1,8 @@
 'use strict';
 
+// Q1 Yes or No
 let name = prompt('Welcome to the pre quiz about Jovincent Del Mundo(Joe)! Whats your name?')
 let military = prompt(`Hello ${name}! Here is the first question to a total of FIVE yes or no questions. Did Joe serve in the United States Coast Guard?`)
-
   if(military.toLowerCase() === 'no' || military.toLowerCase() === 'n'){
     alert('That is correct!')
     // console.log('That is correct!')
@@ -13,9 +13,8 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
   } else {
     alert('Welp... that is something alright... not really much of anything but it is something.')
   }
-
+// Q2 Yes or No
   let origin = prompt('Was Joe born in the Philippines?')
-
   if(origin.toLowerCase() === 'no' || origin.toLowerCase() === 'n'){
     alert('That is correct!')
     // console.log('That is correct!')
@@ -26,9 +25,8 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
   } else {
     alert('Welp... that is something alright... not really much of anything but it is something.')
   }
-
+// Q3 Yes or No
   let age = prompt('Is Joe 30 years old?')
-
   if(age.toLowerCase() === 'yes' || age.toLowerCase() === 'y'){
     alert('That is correct!')
     // console.log('That is correct!')
@@ -39,9 +37,8 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
   } else {
     alert('Welp... that is something alright... not really much of anything but it is something.')
   }
-
+// Q4 Yes or No
   let degree = prompt('Does Joe have a degree in rocket science?')
-
   if(degree.toLowerCase() === 'no' || degree.toLowerCase() === 'n'){
     alert('That is correct!')
     // console.log('That is correct!')
@@ -52,16 +49,65 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
   } else {
     alert('Welp... that is something alright... not really much of anything but it is something.')
   }
-
+// Q5 Yes or No
   let station = prompt(`Okay, last one ${name}! Was Joe ever stationed in Alaska?`)
-
   if(station.toLowerCase() === 'yes' || station.toLowerCase() === 'y'){
     alert('That is correct!')
     // console.log('That is correct!')
   }else if(station.toLowerCase() === 'no' || station.toLowerCase() === 'n'){
     alert('Sorry, that is incorrect. He indeed was stationed in Alaska for 4 years.')
   }else if(station === ' '){
+
+
     alert('are you even trying?')
   } else {
     alert('Welp... that is something alright... not really much of anything but it is something.')
   }
+// Q6 Numeric
+  //Random number generator 
+  const answer = Math.floor(Math.random() * 10) +1;
+  
+  console.log(answer);
+  
+  let guess = prompt('Guess a number between 1 and 10');
+  
+  for(let i = 0; i < 4; i++){
+    let guessAmount = 3
+    let guessLeft = guessAmount - i
+    if(guess === answer){
+      alert('correct')
+    }else if(guess < answer){
+      guess = prompt(`Too low. Guess a number between 1 and 10. ${guessLeft} guesses left.`);
+    }else if(guess > answer){
+      guess = prompt(`Too high. Guess a number between 1 and 10. ${guessLeft} guesses left.`);
+    }
+    if(guessAmount === 0){
+      alert(`The answer is ${answer}.`)
+    }
+  }
+//Q7
+let favDino = ['tyrannosaurus rex', 'pterodactyl', 'Triceratops', 'Velociraptor', 'Spinosaurus','Stegosaurus'] 
+let dinoPrompt = prompt('What is my favorite dinosaur?')
+
+for(let i = 0; i < 5; i++){
+  let guessAmount2 = 5;
+  let guessLeft2 = guessAmount2 - i;
+  let dino = favDino[i];
+  if(dinoPrompt === dino){
+    alert('You got it! One of many.')
+    break;
+  }else{
+    prompt(`That is a cool one, but not one of mine. You have ${guessLeft2} guesses left.`)
+  }
+};
+
+  
+
+
+  
+
+
+
+
+
+
