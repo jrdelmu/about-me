@@ -89,7 +89,29 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
       break;
     }
   }
-  
+//Q7
+  let favDino = ['tyrannosaurus rex', 'pterodactyl', 'triceratops', 'velociraptor', 'spinosaurus','stegosaurus'] 
+let dinoPrompt = prompt('What is my favorite dinosaur?')
+let rightDino = true;
+let guessesLeft = 0;
+
+while(rightDino && guessesLeft < 6){
+  let currentGuess = 6 - guessesLeft
+  for(let i = 0; i < favDino.length; i++){
+    let currentDino = favDino[i]
+    if(currentDino === dinoPrompt.toLowerCase()){
+      alert('Correct! One of many.')
+      correctAnswers++;
+      rightDino = false;
+    }
+  }
+  if(rightDino){
+      guessesLeft++;
+      dinoPrompt = prompt(`Incorrect. Try again. You have ${currentGuess} guesses left.`)
+    }
+  }
+
+alert(`You got ${correctAnswers} out of 7.`)
 // alert(`The correct answer was ${answer}. Try again.`);
 
   // const answer = Math.floor(Math.random() * 10) +1;
@@ -112,11 +134,8 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
   //     alert(`The answer is ${answer}.`)
   //   }
   // }
-//Q7
-let favDino = ['tyrannosaurus rex', 'pterodactyl', 'triceratops', 'velociraptor', 'spinosaurus','stegosaurus'] 
-let dinoPrompt = prompt('What is my favorite dinosaur?')
-let rightDino = true;
-let guessesLeft = 0;
+
+
 
 // for(let i = 0; i < 5; i++){
 //   let guessAmount2 = 5;
@@ -131,23 +150,6 @@ let guessesLeft = 0;
 //   }
 // };
 
-while(rightDino && guessesLeft < 6){
-  let currentGuess = 6 - guessesLeft
-  for(let i = 0; i < favDino.length; i++){
-    let currentDino = favDino[i]
-    if(currentDino === dinoPrompt.toLowerCase()){
-      alert('Correct! One of many.')
-      correctAnswers++;
-      rightDino = false;
-    }
-  }
-  if(rightDino){
-      guessesLeft++;
-      dinoPrompt = prompt(`Incorrect. Try again. You have ${currentGuess} guesses left.`)
-    }
-  }
-
-alert(`You got ${correctAnswers} out of 7.`)
 
   
 
