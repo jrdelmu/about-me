@@ -139,7 +139,7 @@ while(rightDino === false && guessesLeft < 6){
       alert('Correct! One of many.')
       rightDino = true;
     }else{
-      favDino = prompt(`Incorrect. Try again. You have ${currentGuess} guesses left.`)
+      let favDino = prompt(`Incorrect. Try again. You have ${currentGuess} guesses left.`)
       guessesLeft++;
     }
   }
