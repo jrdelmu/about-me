@@ -75,7 +75,7 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
   let answer = Math.floor(Math.random() * 10 +1);
   let guess = prompt('Guess a number between 1 and 10');
   let numOfGuesses = 0;
-  while (guess !== answer ) {
+  while (guess !== answer && numOfGuesses < 5) {
     let remainingGuesses = 5 - numOfGuesses
     if (guess > answer) {
       guess = prompt(`Too high. Guess a number between 1 and 10. You have ${remainingGuesses} guesses left`);
@@ -113,21 +113,38 @@ let military = prompt(`Hello ${name}! Here is the first question to a total of F
   //   }
   // }
 //Q7
-let favDino = ['tyrannosaurus rex', 'pterodactyl', 'Triceratops', 'Velociraptor', 'Spinosaurus','Stegosaurus'] 
+let favDino = ['tyrannosaurus rex', 'pterodactyl', 'triceratops', 'velociraptor', 'spinosaurus','stegosaurus'] 
+let rightDino = false;
 let dinoPrompt = prompt('What is my favorite dinosaur?')
+let guessesLeft = 0;
 
-for(let i = 0; i < 5; i++){
-  let guessAmount2 = 5;
-  let guessLeft2 = guessAmount2 - i;
-  let dino = favDino[i];
-  if(dinoPrompt === dino){
-    alert('You got it! One of many.')
-    correctAnswers++;
-    break;
-  }else{
-    prompt(`That is a cool one, but not one of mine. You have ${guessLeft2} guesses left.`)
+// for(let i = 0; i < 5; i++){
+//   let guessAmount2 = 5;
+//   let guessLeft2 = guessAmount2 - i;
+//   let dino = favDino[i];
+//   if(dinoPrompt === dino){
+//     alert('You got it! One of many.')
+//     correctAnswers++;
+//     break;
+//   }else{
+//     prompt(`That is a cool one, but not one of mine. You have ${guessLeft2} guesses left.`)
+//   }
+// };
+
+while(rightDino === false && guesses < 6){
+  currentGuess = 6 - guessesLeft
+  for(let i = 0; i < favDino.length; i++){
+    let currentDino = favDino[i]
+    if(currentDino === dinoPrompt.toLowerCase()){
+      alert('Correct! One of many.')
+      rightDino = true;
+    }
   }
-};
+  guessesLeft++
+  if(rightDino === false){
+    alert('Incorrect. Try again.')
+  }
+}
 
 alert(`You got ${correctAnswers} out of 7.`)
 
