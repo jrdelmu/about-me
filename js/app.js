@@ -131,19 +131,22 @@ let guessesLeft = 0;
 //   }
 // };
 
-while(rightDino === false && guesses < 6){
-  currentGuess = 6 - guessesLeft
+while(rightDino === false && guessesLeft < 6){
+  let currentGuess = 6 - guessesLeft
   for(let i = 0; i < favDino.length; i++){
     let currentDino = favDino[i]
     if(currentDino === dinoPrompt.toLowerCase()){
       alert('Correct! One of many.')
       rightDino = true;
+    }else{
+      favDino = prompt(`Incorrect. Try again. You have ${currentGuess} guesses left.`)
+      guessesLeft++;
     }
   }
-  guessesLeft++
-  if(rightDino === false){
-    alert('Incorrect. Try again.')
-  }
+  // guessesLeft++
+  // if(rightDino === false){
+  //   prompt('Incorrect. Try again.')
+  // }
 }
 
 alert(`You got ${correctAnswers} out of 7.`)
